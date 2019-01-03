@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET / HTTP/1.1" 200 2692 http-bio-8081-exec-1 946
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/easyui.css HTTP/1.1" 304 - http-bio-8081-exec-2 17
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/jquery-easyui-1.4.1/themes/icon.css HTTP/1.1" 304 - http-bio-8081-exec-3 10
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /css/taotao.css HTTP/1.1" 304 - http-bio-8081-exec-8 8
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/jquery-easyui-1.4.1/jquery.min.js HTTP/1.1" 304 - http-bio-8081-exec-7 7
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/jquery-easyui-1.4.1/jquery.easyui.min.js HTTP/1.1" 304 - http-bio-8081-exec-6 6
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/common.js HTTP/1.1" 304 - http-bio-8081-exec-4 3
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:50 +0800] "GET /js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js HTTP/1.1" 304 - http-bio-8081-exec-5 3
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:51 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/tree_icons.png HTTP/1.1" 304 - http-bio-8081-exec-9 5
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:51 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/blank.gif HTTP/1.1" 304 - http-bio-8081-exec-10 4
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:51 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/panel_tools.png HTTP/1.1" 304 - http-bio-8081-exec-7 4
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:51 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/tabs_icons.png HTTP/1.1" 304 - http-bio-8081-exec-5 5
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:51 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/layout_arrows.png HTTP/1.1" 304 - http-bio-8081-exec-6 5
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:55 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/tabs_icons.png HTTP/1.1" 304 - http-bio-8081-exec-9 2
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:55 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/loading.gif HTTP/1.1" 304 - http-bio-8081-exec-10 3
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:18:55 +0800] "GET /indexManager?_=1546330730847 HTTP/1.1" 200 471 http-bio-8081-exec-4 133
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:16:19:28 +0800] "GET /index/importAll HTTP/1.1" 200 48 http-bio-8081-exec-4 30399

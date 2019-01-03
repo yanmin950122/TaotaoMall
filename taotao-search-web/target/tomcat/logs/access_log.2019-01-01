@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:30:22 +0800] "GET / HTTP/1.1" 404 949 http-bio-8085-exec-1 61
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:30:41 +0800] "GET /index.html HTTP/1.1" 404 949 http-bio-8085-exec-2 5
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:30:44 +0800] "GET /index.html HTTP/1.1" 404 949 http-bio-8085-exec-3 2
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:31:09 +0800] "GET /images/20130606B.png HTTP/1.1" 200 3752 http-bio-8085-exec-6 3
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:31:09 +0800] "GET /search.html?q=%E6%89%8B%E6%9C%BA HTTP/1.1" 200 62691 http-bio-8085-exec-4 2398
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:31:09 +0800] "GET /images/error-jd.gif HTTP/1.1" 200 346 http-bio-8085-exec-7 3
+0:0:0:0:0:0:0:1 - - [01/Jan/2019:20:31:09 +0800] "GET /images/blank.gif HTTP/1.1" 200 49 http-bio-8085-exec-9 2

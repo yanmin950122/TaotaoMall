@@ -88,5 +88,9 @@ public class SearchServiceImpl implements SearchService {
 		
 		return result;
 	}
+	@Override
+	public TaotaoResult updateSearchItemById(Long itemId) throws Exception {
+		return searchDao.updateSearchItemById(itemId);
+	}
 
 }

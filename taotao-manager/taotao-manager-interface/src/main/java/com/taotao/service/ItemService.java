@@ -22,12 +22,26 @@ public interface ItemService {
 	 * @return
 	 */
 	public EasyUIDataGridResult getItemList(Integer page,Integer rows);
-	
+	/**
+	 * 根据商品id查询商品
+	 * getItem:(这里用一句话描述这个方法的作用). <br/> 
+	 * TODO(这里描述这个方法适用条件 – 可选).<br/> 
+	 * TODO(这里描述这个方法的执行流程 – 可选).<br/> 
+	 * TODO(这里描述这个方法的使用方法 – 可选).<br/> 
+	 * TODO(这里描述这个方法的注意事项 – 可选).<br/> 
+	 * 
+	 * @author BetterMan 
+	 * @param itemId
+	 * @return 
+	 * @since JDK 1.8
+	 */
+	public TbItem getItemById(Long itemId);
 	/**根据商品的基础数据 和商品的描述信息 插入商品（插入商品基础表  和商品描述表）
 	 * @param item
 	 * @param desc
 	 * @return
 	 */
+	
 	public TaotaoResult saveItem(TbItem item, String desc);
 	/**根据商品的id查询商品
 	 * @param item
@@ -61,8 +75,8 @@ public interface ItemService {
 	 * @param itemID
 	 * @return 
 	 * @since JDK 1.8
-	 */
-	public TbItemDesc listItemDesc(Long itemID);
+	 */ 
+	public TbItemDesc getItemDescById(Long itemID);
 	/*
 	 * 删除选择的商品
 	 */

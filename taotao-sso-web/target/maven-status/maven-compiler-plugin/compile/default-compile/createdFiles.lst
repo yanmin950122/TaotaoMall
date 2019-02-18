@@ -1,0 +1,3 @@
+com\taotao\sso\controller\PageController.class
+com\taotao\sso\controller\UserRegisterController.class
+com\taotao\sso\controller\UserLoginController.class

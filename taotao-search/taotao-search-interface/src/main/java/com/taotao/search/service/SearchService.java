@@ -24,4 +24,7 @@ public interface SearchService {
 	 * @since JDK 1.8
 	 */
 	public SearchResult search(String queryString, Integer page, Integer rows) throws Exception;
+	TaotaoResult updateSearchItemById(Long itemId) throws Exception;
+	
+	
 }

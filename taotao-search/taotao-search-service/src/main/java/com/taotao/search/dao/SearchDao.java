@@ -9,11 +9,14 @@ import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.taotao.common.pojo.SearchItem;
 import com.taotao.common.pojo.SearchResult;
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.search.mapper.SearchItemMapper;
 
 /**
  * 从索引库中搜索商品的Dao
@@ -31,6 +34,9 @@ public class SearchDao {
 	
 	@Autowired
 	private SolrServer solrServer;
+	
+	@Autowired
+	private SearchItemMapper itemMapper;
 	
 	/**
 	 * 根据查询的条件查询商品的结果集
@@ -92,4 +98,43 @@ public class SearchDao {
 		return searchResult;
 		
 	}
+	//更新索引库
+	/**
+	 * 更新索引库
+	 * updateSearchItemById:(这里用一句话描述这个方法的作用). <br/> 
+	 * TODO(这里描述这个方法适用条件 – 可选).<br/> 
+	 * TODO(这里描述这个方法的执行流程 – 可选).<br/> 
+	 * TODO(这里描述这个方法的使用方法 – 可选).<br/> 
+	 * TODO(这里描述这个方法的注意事项 – 可选).<br/> 
+	 * 
+	 * @author BetterMan 
+	 * @param itemId
+	 * @return
+	 * @throws Exception 
+	 * @since JDK 1.8
+	 */
+	public TaotaoResult updateSearchItemById(Long itemId) throws Exception{
+		
+		//注入mapper
+		//查询到记录
+		SearchItem searchItem = itemMapper.getSearchItemById(itemId);
+		//把记录更新到索引库
+			//创建solrServer 注入进来
+			//创建solrInputDocument对象
+			SolrInputDocument document = new SolrInputDocument();
+			//向文档对象中添加域
+			document.addField("id", searchItem.getId().toString());
+			document.addField("item_title", searchItem.getTitle());
+			document.addField("item_sell_point", searchItem.getSell_point());
+			document.addField("item_price", searchItem.getPrice());
+			document.addField("item_image", searchItem.getImage());
+			document.addField("item_category_name", searchItem.getCategory_name());
+			document.addField("item_desc", searchItem.getItem_desc());
+			//向索引库中添加文档
+			solrServer.add(document);
+			//提交
+			solrServer.commit();
+		return TaotaoResult.ok();
+	}
+	
 }

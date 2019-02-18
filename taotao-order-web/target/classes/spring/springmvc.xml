@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:property-placeholder location="classpath:resource/*.properties"/>
+	<context:component-scan base-package="com.taotao.order.controller" />
+	<mvc:annotation-driven />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- 配置用户身份认证的拦截器拦截订单确认和订单相关的处理 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- ** 表示当前路径及其子路径    * 只是拦截当前路径-->
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.taotao.order.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 引用dubbo服务 -->
+	<dubbo:application name="taotao-order-web"/>
+	<dubbo:registry protocol="zookeeper" address="192.168.25.128:2181"/>	
+	<dubbo:reference interface="com.taotao.sso.service.UserLoginService" id="userLoginService" timeout="300000"/>	
+	<dubbo:reference interface="com.taotao.cart.service.CartService" id="cartService" timeout="300000"/>	
+	<dubbo:reference interface="com.taotao.order.service.OrderService" id="orderService" timeout="300000"/>	
+</beans>

@@ -48,7 +48,8 @@ public class ItemController {
 	 * @return 
 	 * @since JDK 1.8
 	 */
-	@RequestMapping("/item/save")
+	@RequestMapping(value="/item/save",method=RequestMethod.POST)
+	@ResponseBody
 	public TaotaoResult saveItem(TbItem item, String desc) {
 		return itemService.saveItem(item, desc);
 	}
@@ -84,7 +85,7 @@ public class ItemController {
 	@ResponseBody
 	public TbItemDesc getItemDesc(@PathVariable Long id) {
 		
-		TbItemDesc itemDesc = itemService.listItemDesc(id);
+		TbItemDesc itemDesc = itemService.getItemDescById(id);
 		//System.out.println(itemDesc.getItemId() +"="+ itemDesc.getItemDesc());
 		return itemDesc;
 		
